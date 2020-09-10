@@ -17,6 +17,7 @@ echo "---> Installing application source..."
 cp -Rfv /tmp/src/. /opt/app-root/
 
 ls -al /tmp/src
+ls -al /go
 ls -al /opt/app-root
 
 echo "---> Building application from source..."
