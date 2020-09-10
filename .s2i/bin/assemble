@@ -14,10 +14,11 @@ if [[ "$1" == "-h" ]]; then
 fi
 
 echo "---> Installing application source..."
-cp -Rf /tmp/src/. /opt/app-root/src/go
+#cp -Rf /tmp/src/. /opt/app-root/src/go
 
+GOPATH=${GOPATH}:/tmp/src
 echo "GOPATH = $GOPATH"
 
 echo "---> Building application from source..."
-CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o /opt/app-root/nfs-client-provisioner /opt/app-root/src/go/nfs-client/cmd/nfs-client-provisioner/provisioner.go
+CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o /opt/app-root/nfs-client-provisioner /tmp/src/nfs-client/cmd/nfs-client-provisioner/provisioner.go
 
