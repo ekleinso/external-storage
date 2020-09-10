@@ -20,5 +20,7 @@ GOPATH=${GOPATH}:/tmp/src
 echo "GOPATH = $GOPATH"
 
 echo "---> Building application from source..."
-CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o /opt/app-root/nfs-client-provisioner /tmp/src/nfs-client/cmd/nfs-client-provisioner/provisioner.go
+cd /tmp/src/nfs-client
+make build
+#CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o /opt/app-root/nfs-client-provisioner /tmp/src/nfs-client/cmd/nfs-client-provisioner/provisioner.go
 
