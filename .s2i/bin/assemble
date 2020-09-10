@@ -14,7 +14,7 @@ if [[ "$1" == "-h" ]]; then
 fi
 
 echo "---> Installing application source..."
-#cp -Rf /tmp/src/. /opt/app-root/src/go
+cp -Rf /tmp/src/vendor/. /opt/app-root/src/go
 
 GOPATH=${GOPATH}:/tmp/src
 echo "GOPATH = $GOPATH"
